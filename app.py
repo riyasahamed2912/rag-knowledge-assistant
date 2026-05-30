@@ -1,6 +1,6 @@
 import streamlit as st
 import fitz  # PyMuPDF
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
@@ -163,7 +163,7 @@ Answer:"""
                 "prompt": prompt,
                 "stream": False
             },
-            timeout=120
+            timeout=300
         )
         
         if response.status_code == 200:
